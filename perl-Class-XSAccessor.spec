@@ -9,7 +9,7 @@ Summary:	Class::XSAccessor - Generate fast XS accessors without runtime compilat
 Summary(pl.UTF-8):	Class::XSAccessor - Generuj szybkie funkcje dostępu XS bez kompilacji w czasie uruchomienia
 Name:		perl-Class-XSAccessor
 Version:	1.05
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -60,6 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorarch}/Class/*.pm
+%dir %{perl_vendorarch}/Class/XSAccessor
+%{perl_vendorarch}/Class/XSAccessor/*.pm
 %dir %{perl_vendorarch}/auto/Class/XSAccessor
 %{perl_vendorarch}/auto/Class/XSAccessor/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Class/XSAccessor/*.so
