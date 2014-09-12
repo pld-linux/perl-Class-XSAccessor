@@ -63,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Class/XSAccessor
 %{perl_vendorarch}/Class/XSAccessor/*.pm
 %dir %{perl_vendorarch}/auto/Class/XSAccessor
-%{perl_vendorarch}/auto/Class/XSAccessor/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Class/XSAccessor/*.so
 %{_mandir}/man3/*
