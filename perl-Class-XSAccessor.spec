@@ -6,20 +6,20 @@
 %define	pdir	Class
 %define	pnam	XSAccessor
 Summary:	Class::XSAccessor - Generate fast XS accessors without runtime compilation
-Summary(pl.UTF-8):	Class::XSAccessor - Generuj szybkie funkcje dostępu XS bez kompilacji w czasie uruchomienia
+Summary(pl.UTF-8):	Class::XSAccessor - generowanie szybkich funkcji dostępu XS bez kompilacji w czasie uruchomienia
 Name:		perl-Class-XSAccessor
-Version:	1.13
-Release:	6
+Version:	1.19
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/S/SM/SMUELLER/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	3650906917d824582ad82e1bd974da45
+Source0:	http://www.cpan.org/modules/by-module/Class/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	5c5dea74f00ad37c5119dd22b28a5563
 URL:		http://search.cpan.org/dist/Class-XSAccessor/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(AutoXS::Header) >= 1.00
+BuildRequires:	perl-AutoXS-Header >= 1.00
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,8 +32,12 @@ Class::XSAccessor::Array implements the same interface for objects
 that use arrays for their internal representation.
 
 %description -l pl.UTF-8
-Class::XSAccessor - Generuj szybkie funkcje dostępu XS bez kompilacji
-w czasie uruchomienia.
+Class::XSAccessor implementuje szybkie funkcje dostępu do odczytu,
+zapisu lub odczytu/zapisu w XS. Dodatkowo potrafi zapewnić predykaty
+takie jak has_foo() do sprawdzania, czy atrybut foo jest zdefiniowany
+w obiekcie. Działa tylko z obiektami zaimplentowanymi jako zwykłe
+hasze. Class::XSAccessor::Array implementuje ten sam interfejs dla
+obiektów wykorzystujących tablice jako wewnętrzną reprezentację.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -63,5 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Class/XSAccessor
 %{perl_vendorarch}/Class/XSAccessor/*.pm
 %dir %{perl_vendorarch}/auto/Class/XSAccessor
-%attr(755,root,root) %{perl_vendorarch}/auto/Class/XSAccessor/*.so
-%{_mandir}/man3/*
+%attr(755,root,root) %{perl_vendorarch}/auto/Class/XSAccessor/XSAccessor.so
+%{_mandir}/man3/Class::XSAccessor.3pm*
+%{_mandir}/man3/Class::XSAccessor::*.3pm*
