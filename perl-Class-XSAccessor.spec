@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Class
 %define	pnam	XSAccessor
 Summary:	Class::XSAccessor - Generate fast XS accessors without runtime compilation
