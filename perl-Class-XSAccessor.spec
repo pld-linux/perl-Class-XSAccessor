@@ -14,9 +14,10 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Class/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	5c5dea74f00ad37c5119dd22b28a5563
-URL:		http://search.cpan.org/dist/Class-XSAccessor/
+URL:		https://metacpan.org/release/Class-XSAccessor
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-AutoXS-Header >= 1.00
 %endif
